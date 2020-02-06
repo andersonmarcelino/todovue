@@ -6,4 +6,10 @@ describe('Todolist', () => {
     cy.get('[data-test="input-add"]').type('Primeira Tarefa{enter}')
     cy.get('[data-test="todo-list"]').contains('Primeira Tarefa')
   })
+
+  it('Clear the input', () => {
+    cy.visit('/')
+    cy.get('[data-test="input-add"]').type('Primeira Tarefa{enter}')
+    cy.get('[data-test="input-add"]').should('have.value', '')
+  })
 })
