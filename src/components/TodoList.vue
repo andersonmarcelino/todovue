@@ -23,6 +23,7 @@
           id: Math.random(),
           label: this.inputAdd
         })
+        this.inputAdd = ''
       }
     }
   }
