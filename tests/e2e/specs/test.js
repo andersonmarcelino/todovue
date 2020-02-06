@@ -32,5 +32,15 @@ describe('Todolist', () => {
       cy.get('[data-test="done-list"] li')
         .should('have.length', 1)
     })
+
+    it('Remove item from todo list', () => {
+      setup(cy)
+
+      cy.get('[data-test="todo-list"] li:nth-child(2) [type=checkbox]')
+        .click()
+
+      cy.get('[data-test="todo-list"] li')
+        .should('have.length', 2)
+    })
   })
 })
