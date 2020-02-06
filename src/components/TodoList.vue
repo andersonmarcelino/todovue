@@ -21,18 +21,21 @@
     name: 'TodoList',
     data () {
       return {
-        todoList: [],
+        fullList: [],
         inputAdd: '',
       }
     },
     computed: {
       doneList () {
-        return this.todoList.filter((item) => item.done)
+        return this.fullList.filter((item) => item.done)
+      },
+      todoList () {
+        return this.fullList.filter((item) => !item.done)
       }
     },
     methods: {
       addItem () {
-        this.todoList.push({
+        this.fullList.push({
           id: Math.random(),
           label: this.inputAdd,
           done: false
